@@ -1,0 +1,27 @@
+.shopping-div {
+  position: fixed;
+  top: 152px; /* sayfanın üstünden ne kadar aşağıda başlayacağını belirler */
+  right: 100px; /* sağdan boşluk */
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(11, 0, 0, 0.315);
+  border: 0.12px solid rgba(128, 128, 128, 0.373);
+  border-radius: 8px;
+  /*z-index: 1000; /* diğer elementlerin üstünde kalmasını sağlar */
+}
+
+
+  .shopping-div p span{
+    text-align: justify;  /* For Edge */
+    text-align-last: right;
+  }
+
+  /* Her p satırını esnek yap */
+.shopping-div p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+  
+ 

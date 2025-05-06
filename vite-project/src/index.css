@@ -1,0 +1,215 @@
+
+.product-container {
+    overflow-x: auto;          /* Yatay kaydırma gereken durumlarda kaydırma çubuğu ekle */
+    padding: 20px;            /* Üst ve alt boşluk ekle */
+    
+}
+
+ul {
+   
+    display: flex;          /* yan yana sıralamayı bunu sayesinde yaptık.*/
+    /*flex-wrap: nowrap;       /* Kartların bir alt satıra geçmesini engelle */
+    list-style-type: none;   /* Liste işaretlerini kaldır */
+    padding: 0;              /* Varsayılan iç boşluğu kaldır */
+    margin: 0;               /* Varsayılan margin'i kaldır */
+    gap: 30px;               /* Kartlar arası boşluk */
+}
+
+.product-body {
+    padding: 10px;           /* Kart içi boşluk */
+    min-width: 214px;        /* Minimum genişlik, İçerik sığmıyorsa öğe büyür ve taşmaz */
+    height: 400px;           /* Kart yüksekliği */
+    border-radius: 25px;     /* Kenar yuvarlama */
+    box-shadow: 0 0px 3px 0 rgba(159, 153, 159, 0.553); /* Gölgeleme */
+    display: flex;           /* Yatay düzen için flex */
+    flex-direction: column;  /* İçerikleri sütun bazlı sırala */
+    /*align-items: center;     /* İçeriği ortala */
+    padding-top: 3px;
+    
+}
+
+.product-img{
+    width: 181px;
+    height: 210px;
+    margin: 0 auto; /* Hem yatay ortalama hem de dikeyde boşlukları sıfırlamak için */
+    display: block;
+    margin-top: -36px;
+    object-fit: cover; /* Görselin kesilmeden düzgün görünmesi için */
+   
+}
+
+.product-title{
+    color: rgba(22, 11, 11, 0.555);
+    font-weight: bold;
+    align-items: start;
+  
+    
+
+}
+
+.product-stars{
+    padding-left: -5px;
+   
+}
+
+
+
+.fa-star{
+    margin-left: 5px;
+    padding-bottom: 1px;
+    color:rgba(128, 128, 128, 0.373);
+
+   
+}
+
+.checked {
+    color: orange;
+   
+  }
+
+.rating-text{
+    color: gray;
+    padding-left: 10px;
+    font: weight 300px;
+    font-size: 13px;
+ 
+    
+}
+
+.product-price{
+    color: rgba(23, 23, 23, 0.8);
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 5px; /* Yukarı kaydır */
+  
+
+}
+
+.düzelt{
+    padding-left: 1px;
+
+}
+
+.heart-icon {
+    left: 175px;
+    position: relative;
+    top: 5px;
+    width: 40px; /* Genişlik */
+    height: 40px; /* Yükseklik */
+    border-radius: 50%; /* Tam yuvarlak */
+    display: flex; /* İkonu ortalamak için */
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(250, 250, 250); /* İkonun arka planı */
+    color: #808080; /* Başlangıçta gri kalp ikonu */
+    font-size: 1.5rem;
+    cursor: pointer;
+ }
+ 
+ .heart-icon.active {
+    color: #ff4757; /* Kırmızı ton */
+ }
+ 
+ /* Efekt vermek için */
+ .heart-icon:hover {
+    -webkit-text-stroke: 1.60px rgba(0, 0, 0, 0.595); /* Kenar çizgisi */
+ }
+ 
+ .heart-icon .fa-heart {
+    font-size: 20px;
+    color: inherit; /* Kalp ikonunun rengini inherit et */
+ }
+ 
+ .heart-icon.active .fa-heart {
+    color: #ff4757; /* Tıklandığında kırmızı */
+ }
+ 
+
+.product-basket{
+    border: none;
+    background-color: rgba(255, 166, 0, 0.866);
+    text-align: center;
+    font-size: 15px;
+    border-radius: 7px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Geçiş animasyonu */
+    font-size: 14px;
+    display: flex; /* Flexbox kullanarak hizalama */
+    justify-content: center; /* Yatay ortalama */
+    align-items: center;
+    /*padding: 10px 15px; /* Butonun iç boşlukları */
+}
+ 
+
+.product-button-div{
+    
+    margin-top: auto; /* Butonu en alta itmek için */   
+  
+   /* display: flex; /* Butonları yatay hizalar */ 
+   margin-left: 15px;
+   display: flex;
+   height: 50px;
+}
+
+.product-basket:hover {
+    background-color: #e277269e; /* Üzerine gelindiğinde arka plan renginin değişimi */
+text-align: center;
+
+
+}
+
+.amountDiv{
+background-color: white;
+margin-left: 10px;
+border-radius: 35px;
+background-color: white;
+height: 45px;
+width: 75px;
+border: 0.12px solid rgba(128, 128, 128, 0.373);
+display: flex; /* İçeriği flex düzenine sok */
+justify-content: center; /* Yatayda ortala */
+align-items: center; /* Dikeyde ortala */
+
+
+}
+
+.a{
+    display: flex; /* Butonları yatay hizalar */ 
+    flex-direction: row;  /* İçerikleri sütun bazlı sırala */
+    align-items: center;   
+    margin-top:1px;
+    margin-left: 2px;
+    justify-content: center; /* Yatayda ortalamayı sağlar */
+    width: 100%; /* Yatayda tam genişlik almasını sağla */
+    
+}
+
+.a button{
+    border: none;
+    background-color: white;
+    color:rgba(255, 166, 0, 0.866) ;
+    font-weight: bold;
+    font-size: 26px;
+    cursor: pointer;
+    size: 5px;
+    border-radius: 50%;
+    padding-bottom: 3px;
+    padding: 0; /* Butonların iç boşluğunu sıfırla */
+   
+
+}
+
+.a span{
+    font-size: 16px;
+    margin: 8px;
+    font-weight: bold;
+}
+
+
+  
+
+

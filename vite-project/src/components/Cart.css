@@ -1,0 +1,171 @@
+
+.mainDiv{
+    height: 180px;
+    width: 60%;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 45px;
+    display: flex;
+  justify-content: space-between; /* Alanları yaymak için */
+  padding: 20px;
+  margin-top: 15px;
+  border: 0.12px solid rgba(128, 128, 128, 0.373);
+}
+
+.cartItem {
+    display: flex; /* Resim ve yazılar yan yana */
+    gap: 20px; /* Resim ile yazı arasında boşluk */
+  }
+
+.amountDivy{
+    background-color: rgb(197, 191, 191);
+margin-left: -600px;
+margin-top: 15px;
+border-radius: 35px;
+background-color: white;
+height: 45px;
+width: 75px;
+border: 0.12px solid rgba(128, 128, 128, 0.373);
+display: flex; /* İçeriği flex düzenine sok */
+justify-content: center; /* Yatayda ortala */
+align-items: center; /* Dikeyde ortala */
+padding-left: 10px;
+justify-content: space-between; /* Yatayda butonlar arasına boşluk bırak */
+align-items: center; /* Dikeyde ortala */
+padding: 0 10px; /* Butonlar etrafında boşluk bırak */
+}
+
+.ay{
+    display: flex; /* Butonları yatay hizalar */ 
+    flex-direction: row;  /* İçerikleri sütun bazlı sırala */
+ 
+    margin-top:1px;
+    margin-left: 2px;
+     /* Yatayda ortalamayı sağlar */
+    width: 100%; /* Yatayda tam genişlik almasını sağla */
+    
+}
+
+.flex{
+display: flex;
+flex-direction: row;  /* İçerikleri sütun bazlı sırala */
+}
+
+.productDetails span {
+    word-wrap: break-word; /* Metnin taşmasını engeller ve alt satıra geçmesini sağlar */
+    max-width: 300px; /* İhtiyaca göre en genişliği ayarlayabilirsin */
+    margin-top: 10px;
+    color: #666; /* Gri bir renk vererek açıklamayı daha okunabilir yapabilirsin */
+    
+  }
+
+  .productDetails{
+    padding-left: -5px;
+    
+  }
+
+  .imageDiv{
+    width: 180px;
+    height: 190px;
+    margin: 0 auto; /* Hem yatay ortalama hem de dikeyde boşlukları sıfırlamak için */
+    display: block;
+    margin-top: -5px;
+    margin-left: 2px;
+    object-fit: cover;
+    margin-right: 30px;
+    border: 0.12px solid rgba(128, 128, 128, 0.373);
+border-radius: 5%;
+  }
+
+  .image{
+    width: 181px;
+    height: 205px;
+    margin: 0 auto; /* Hem yatay ortalama hem de dikeyde boşlukları sıfırlamak için */
+    display: block;
+    margin-top: -30px;
+    object-fit: cover;
+    padding-top: 22px;
+  }
+
+  .b{
+    display: flex; /* Butonları yatay hizalar */ 
+    flex-direction: row;  /* İçerikleri sütun bazlı sırala */
+    align-items: center;   
+    margin-top:1px;
+    margin-left: 41px;
+    justify-content: center; /* Yatayda ortalamayı sağlar */
+    width: 100%; /* Yatayda tam genişlik almasını sağla */
+    justify-content: space-between; /* YATAYDA boşluk bırakır */
+    
+}
+
+.b button{
+    border: none;
+    background-color: white;
+    color:rgba(255, 166, 0, 0.866) ;
+    font-weight: bold;
+    font-size: 26px;
+    cursor: pointer;
+    size: 5px;
+    border-radius: 50%;
+    padding-bottom: 3px;
+    padding: 0; /* Butonların iç boşluğunu sıfırla */
+   
+
+}
+
+.b span{
+    font-size: 16px;
+    margin: 8px;
+    font-weight: bold;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.fa-solid fa-trash-can{
+    padding-left: 0%;
+}
+
+.amountTrashDiv{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 54px; /* Açıklamadan biraz boşluk bırak */
+}
+
+.amountDiv{
+    width: 120px;
+}
+
+.trash-icon{
+    background-color: red;
+}
+
+.icon-buttonDiv{
+    margin-left: 42px;
+    margin-top: -3px;
+   
+}
+
+.orderTotalDiv {
+  width: 25%; /* Sabit genişlik */
+  position: sticky; /* Sayfa kayınca bile yerinde durur */
+  top: 20px; /* Sayfa kaydığında üstten 20px mesafe bırakır */
+  background-color: #f8f8f8; /* İsteğe bağlı arka plan */
+  padding: 20px;
+  padding-left: 20px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.cartContainer {
+  display: flex;
+  justify-content: space-between; /* mainDiv sola, orderTotalDiv sağa yaslanır */
+  align-items: flex-start; /* Üstten hizalar */
+  width: 100%; /* Ekranı kaplasın */
+  padding: 20px;
+  box-sizing: border-box; /* Taşma olmasın */
+}
+
+

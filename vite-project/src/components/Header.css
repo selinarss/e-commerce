@@ -1,0 +1,148 @@
+h1 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+.HeaderTopDiv {
+  display: flex; /* Elemanları yatay olarak hizalar */
+  align-items: center; /* Dikey hizalama */
+  gap: 10px;
+ 
+}
+
+.HeaderTopDiv h1 {
+  margin: 0;
+  font-size: 24px;
+  color: orange;
+  cursor: pointer;
+  
+}
+
+.HeaderTopDiv input {
+  border-radius: 6px;
+  height: 30px;
+  width: 600px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.126);
+  margin-left: 15px;
+  padding-left: 18px;
+  outline: none;
+  margin-top: 16px;
+ 
+}
+
+.HeaderTopDiv input::placeholder {
+  font-size: 11px;
+  padding-left: 1px;
+  width: 100%; /* Ekle! */
+}
+
+.login-basketDiv {
+  margin-left: auto; /* bu satır sayesinde en sağa yaslanır */
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-right: 60px;
+  
+}
+
+.login-basketDiv span {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.search-container {
+  position: relative;
+  width: 650px;
+  margin-left: 55px;
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+  
+  
+}
+
+.search-container input {
+  border-radius: 6px;
+  height: 35px;
+  width: 115%;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.126);
+  padding-left: 18px;
+  outline: none;
+  font-size: 13px;
+  
+
+ 
+}
+
+.search-button {
+  background-color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: -1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  border: 1px solid #ccc; /* Gri, ince kenarlık */
+  border-radius: 6px;    
+  margin-left: 5px;
+}
+
+.search-button i {
+  color: orange;
+  font-size: 14px;
+  
+}
+
+
+
+.nav-link {
+  text-decoration: none;      /* Alt çizgiyi kaldırır */
+  color: black;               /* Rengini siyah yapar (istediğini verebilirsin) */
+  font-family: inherit;       /* Yazı tipi uyumu */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-link:hover {
+  color: orange;              /* Hover efekti istersen */
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+.cart-shopping-div span {
+  background: rgba(255, 166, 0, 0.866);
+  border-radius: 50%;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.span {
+  color: rgb(255, 166, 0);
+  font-size: 10px;
+}
+
+.cart-shopping-div {
+  margin-left: auto;
+}
+
+.totalDiv {
+  display: flex;
+  align-items: row;
+}
