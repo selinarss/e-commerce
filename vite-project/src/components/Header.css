@@ -4,10 +4,19 @@ h1 {
 }
 
 .HeaderTopDiv {
-  display: flex; /* Elemanları yatay olarak hizalar */
-  align-items: center; /* Dikey hizalama */
+  display: flex;
+  /* Elemanları yatay olarak hizalar */
+  align-items: center;
+  /* Dikey hizalama */
   gap: 10px;
- 
+  padding: 20px 40px;
+  /* Üstten boşluk ekledim ve sağ-sol boşlukları korudum */
+  border-bottom: 1px solid #e0e0e0;
+  /* Alt çizgi */
+  margin-bottom: 30px;
+  /* Alt çizgi ile içerik arası boşluk */
+  padding-bottom: 25px;
+  /* Çizgiyi daha aşağı almak için */
 }
 
 .HeaderTopDiv h1 {
@@ -15,7 +24,7 @@ h1 {
   font-size: 24px;
   color: orange;
   cursor: pointer;
-  
+
 }
 
 .HeaderTopDiv input {
@@ -28,25 +37,27 @@ h1 {
   padding-left: 18px;
   outline: none;
   margin-top: 16px;
- 
+
 }
 
 .HeaderTopDiv input::placeholder {
   font-size: 11px;
   padding-left: 1px;
-  width: 100%; /* Ekle! */
+  width: 100%;
+  /* Ekle! */
 }
 
 .login-basketDiv {
-  margin-left: auto; /* bu satır sayesinde en sağa yaslanır */
+  margin-left: auto;
+  /* bu satır sayesinde en sağa yaslanır */
   background-color: white;
   display: flex;
   align-items: center;
   gap: 15px;
   padding: 5px 10px;
   border-radius: 6px;
-  margin-right: 60px;
-  
+  margin-right: 20px;
+  /* Sağ boşluğu azalttım */
 }
 
 .login-basketDiv span {
@@ -62,60 +73,81 @@ h1 {
   display: flex;
   align-items: center;
   margin-top: -10px;
-  
-  
+
+
 }
 
 .search-container input {
   border-radius: 6px;
   height: 35px;
   width: 115%;
-  border: none;
+  border: 1px solid #ccc;
   background-color: rgba(128, 128, 128, 0.126);
   padding-left: 18px;
   outline: none;
   font-size: 13px;
-  
+  transition: all 0.2s ease;
+}
 
- 
+.search-container input:hover {
+  border-color: orange;
+  background-color: #fff8f0;
+}
+
+.search-container input:focus {
+  border-color: orange;
+  background-color: white;
+  box-shadow: 0 0 0 2px rgba(255, 166, 0, 0.2);
 }
 
 .search-button {
   background-color: white;
-  border: none;
+  border: 1px solid #ccc;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: -1px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 15px;
-  border: 1px solid #ccc; /* Gri, ince kenarlık */
-  border-radius: 6px;    
   margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  border-color: orange;
+  background-color: #fff8f0;
+}
+
+.search-button:focus {
+  outline: none;
+  border-color: orange;
+  box-shadow: 0 0 0 2px rgba(255, 166, 0, 0.2);
 }
 
 .search-button i {
   color: orange;
   font-size: 14px;
-  
+
 }
 
 
 
 .nav-link {
-  text-decoration: none;      /* Alt çizgiyi kaldırır */
-  color: black;               /* Rengini siyah yapar (istediğini verebilirsin) */
-  font-family: inherit;       /* Yazı tipi uyumu */
+  text-decoration: none;
+  /* Alt çizgiyi kaldırır */
+  color: black;
+  /* Rengini siyah yapar (istediğini verebilirsin) */
+  font-family: inherit;
+  /* Yazı tipi uyumu */
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
 .nav-link:hover {
-  color: orange;              /* Hover efekti istersen */
+  color: orange;
+  /* Hover efekti istersen */
   transition: all 0.2s ease-in-out;
 }
 

@@ -19,7 +19,11 @@ export const ShoppingCart = () => {
         <>
           {addToCart.map((item) => (
             <div key={item.product.id}>
-              <Cart product={item.product} />
+              <Cart product={item.product} quantity = {item.quantity} 
+              />
+              {/*İlk değişiklik burada oldu, Cart.jsx dosyasında product.count kullanılıyor, 
+              ancak sepetteki miktar item.quantity içinde tutuluyor.
+               Yani yanlış değeri gösteriyorsunuz. */}
             </div>
           ))}
           <Total />

@@ -23,10 +23,10 @@ const Total = () => {
         Toplam ürün adedi: <span>{totalItemCount}</span>
       </p>
       <p>
-        Ürünün Toplamı: <span>{totalPrice.toFixed(2)} ₺</span>
+        Ürünün Toplamı: <span>{totalPrice.toFixed(2)} $</span>
       </p>
       <p>
-        Kargo Toplam: <span>{kargoPrice} ₺</span>
+        Kargo Toplam: <span>{kargoPrice} $</span>
       </p>
       <hr />
       <p style={{ fontSize: "20px" }}>
@@ -35,6 +35,7 @@ const Total = () => {
           {(kargoPrice + totalPrice).toFixed(2)}
         </span>
       </p>
+      <button className="order-button">Sipariş Ver</button>
     </div>
   );
 };

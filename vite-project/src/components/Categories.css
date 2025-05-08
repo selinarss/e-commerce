@@ -1,0 +1,117 @@
+.categories-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    /* background-color: #f0f0f0;*/
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    /* Dümdüz alt çizgi */
+    border-bottom: 1px solid #e0e0e0;
+    /* 1px kalınlığında, düz (solid) ve gri renkte alt çizgi */
+    padding-bottom: -20px;
+    /* Alt çizgi ile içerik arasına boşluk ekler */
+    margin-bottom: 20px;
+    /* Kapsayıcının altındaki diğer elementlerle arasına boşluk ekler */
+    width: 100%;
+
+
+}
+
+.categories-container ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+    padding-left: 350px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    /* Yazıların alt satıra geçmesini engeller */
+    margin-left: 305px;
+}
+
+.categories-container ul li {
+    list-style: none;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 0 10px;
+    position: relative;
+
+}
+
+/* Dikey çizgi sadece ilk elemana eklenmez */
+.categories-container ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 355%;
+    width: 1px;
+    background-color: #ccc;
+    top: 4px;
+}
+
+.category-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-products>* {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Favoriler sayfasının dış kapsayıcısı */
+.category-products {
+    max-width: 1200px;
+    /* Sayfanın en fazla 1200px genişlemesini sağlar */
+    margin: 0 auto;
+    /* Sol ve sağ boşluğu otomatik ayarlayarak ortalar */
+    padding: 2rem;
+    /* İçerik ile kenarlar arasında boşluk bırakır */
+    box-sizing: border-box;
+    /* Padding dahil şekilde kutu boyutunu hesaplar */
+}
+
+/* Ürünlerin sıralandığı ızgara yapısı */
+.category-products {
+    display: grid;
+    /* Grid sistemi etkinleştirilir */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 eşit sütun oluşturur */
+    gap: 15px;
+    /* Satırlar ve sütunlar arası boşluk */
+}
+
+/* 1200px altı ekranlar (örneğin dizüstü): 3 ürün */
+@media (max-width: 1200px) {
+    .category-products {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 ürün yan yana */
+    }
+}
+
+/* 900px altı ekranlar (örneğin tablet): 2 ürün */
+@media (max-width: 900px) {
+    .category-products {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 ürün yan yana */
+    }
+}
+
+/* 600px altı ekranlar (örneğin telefon): 1 ürün */
+@media (max-width: 600px) {
+    .category-products {
+        grid-template-columns: 1fr;
+        /* 1 ürün tüm satırı kaplar */
+    }
+}

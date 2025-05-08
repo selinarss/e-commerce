@@ -3,10 +3,11 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import Total from "./Total";
 
-const Cart = ({ product }) => {
-  const { increment, decrement, removeFromCart } = useContext(GlobalContext);
+const Cart = ({ product, quantity }) => {
+  const { cartIncrement, cartDecrement, removeFromCart } = useContext(GlobalContext);
   //const cart = inCard(product.id);
-  console.log("Sepetteki total ürün miktari", product.count);
+  console.log("Sepetteki total ürün miktari", quantity);
+ 
 
   return (
     <>
@@ -28,9 +29,9 @@ const Cart = ({ product }) => {
               <div className="amountTrashDiv">
                 <div className="amountDiv">
                   <div className="b">
-                    <button onClick={() => decrement(product.id)}>-</button>
-                    <span>{product.count}</span>
-                    <button onClick={() => increment(product.id)}>+</button>
+                    <button onClick={() => cartDecrement(product.id)}>-</button>
+                    <span>{quantity}</span>
+                    <button onClick={() => cartIncrement(product.id)}>+</button>
                     <div className="icon-buttonDiv">
                       <button
                         onClick={() => removeFromCart(product.id)}

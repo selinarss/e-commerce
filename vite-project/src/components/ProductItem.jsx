@@ -58,7 +58,7 @@ export default function ProductItem({ product }) {
           })}
           <span className="rating-text">{product.rating}</span>
         </div>
-        <p className="product-price">{product.price + " TL"}</p>
+        <p className="product-price">{product.price + " $"}</p>
         <br></br>
         <div className="product-button-div">
           <button

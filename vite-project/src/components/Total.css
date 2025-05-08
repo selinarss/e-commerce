@@ -1,27 +1,81 @@
 .shopping-div {
   position: fixed;
-  top: 152px; /* sayfanın üstünden ne kadar aşağıda başlayacağını belirler */
-  right: 100px; /* sağdan boşluk */
+  top: 152px;
+  /* sayfanın üstünden ne kadar aşağıda başlayacağını belirler */
+  right: 100px;
+  /* sağdan boşluk */
   width: 300px;
   background-color: white;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(11, 0, 0, 0.315);
   border: 0.12px solid rgba(128, 128, 128, 0.373);
   border-radius: 8px;
-  /*z-index: 1000; /* diğer elementlerin üstünde kalmasını sağlar */
+  z-index: 1000;
+  /* diğer elementlerin üstünde kalmasını sağlar */
 }
 
-
-  .shopping-div p span{
-    text-align: justify;  /* For Edge */
-    text-align-last: right;
+/* Responsive tasarım için medya sorguları */
+@media screen and (max-width: 992px) {
+  .shopping-div {
+    right: 50px;
+    width: 250px;
   }
+}
 
-  /* Her p satırını esnek yap */
+@media screen and (max-width: 768px) {
+  .shopping-div {
+    right: 20px;
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .shopping-div {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding: 15px;
+  }
+}
+
+.shopping-div p span {
+  text-align: justify;
+  /* For Edge */
+  text-align-last: right;
+}
+
+/* Her p satırını esnek yap */
 .shopping-div p {
   display: flex;
   justify-content: space-between;
   margin: 8px 0;
 }
-  
- 
+
+.order-button {
+  background-color: rgba(255, 166, 0, 0.866);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  /* buton daha aşağıya kaydırıldı */
+  width: 100%;
+  /*tüm genişliği kapla */
+  padding-top: 18px;
+  margin-bottom: 18px;
+  /* buton altı boşluk arttırıldı */
+}
+
+.order-button:hover {
+  background-color: rgba(255, 166, 0, 0.416);
+}

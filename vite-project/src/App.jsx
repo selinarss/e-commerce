@@ -9,6 +9,8 @@ import { RootLayout } from "./pages/RootLayout";
 import { User } from "./pages/User.jsx"; // User'ı doğru bir şekilde import ediyoruz
 import { Favorites } from "./pages/Favorites.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
+import { HomePage } from "./pages/HomePage.jsx";
+import CategoryPage  from "./pages/CategoryPage.jsx";
 
 function App() {
   // const [totalObject, setTotalObject] = useState({});
@@ -18,17 +20,16 @@ function App() {
       path: "/",
       element: <RootLayout />,
       children: [
-        { index: true, element: <ProductList /> },
+        { index: true, element: <HomePage /> },
         { path: "/user", element: <User /> },
         { path: "/favorites", element: <Favorites /> },
         { path: "/card", element: <ShoppingCart /> },
+        { path: "/category/:catId", element: <CategoryPage /> },
       ],
     },
   ]);
 
   return (
-    // <RouterProvider router={router}/>
-
     <GlobalProvider>
       <RouterProvider router={router} />
     </GlobalProvider>
