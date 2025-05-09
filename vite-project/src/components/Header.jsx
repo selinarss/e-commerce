@@ -1,15 +1,26 @@
 import "./Header.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { NavLink } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const { setSearchValue, searchValue } = useContext(GlobalContext);
+  const { setSearchValue } = useContext(GlobalContext);
+  const inputRef = useRef();
 
+  /*
   const handleSearch = (e) => {
     e.preventDefault(); // ← Sayfa yenilenmesini engeller.
+    setSearchValue("");
+  };*/
+
+  const handleSearch = (e) => {
+    e.preventDefault(); //sayfanın kalması için
+    setSearchValue(inputRef.current.value);
+  };
+
+  const handleReset = () => {
     setSearchValue("");
   };
 
@@ -34,16 +45,24 @@ export const Header = () => {
   return (
     <div className="HeaderTopDiv">
       <h1 onClick={navigateHandler}>Shopping House</h1>
-      <form onSubmit={handleSearch} className="search-container">
+      <form
+        onSubmit={handleSearch}
+        onReset={handleReset}
+        className="search-container"
+      >
         <input
           type="text"
           placeholder="Aradığınız ürün, kategori veya markayı yazınız."
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          ref={inputRef}
+          // onChange={(e) => setSearchValue(e.target.value)}
         />
 
         <button type="submit" className="search-button">
           <i className="fa-solid fa-magnifying-glass search-icon"></i>
+        </button>
+
+        <button type="reset" className="reset-button">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </form>
 

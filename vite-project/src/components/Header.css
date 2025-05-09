@@ -131,6 +131,37 @@ h1 {
 
 }
 
+.reset-button{
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-left: 5px;
+  transition: all 0.2s ease;
+}
+
+.reset-button i {
+  color: rgba(0, 0, 0, 0.648);
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  border-color: red;
+  background-color: #fff8f0;
+}
+
+.reset-button:focus {
+  outline: none;
+  border-color: red;
+  box-shadow: 0 0 0 2px rgba(255, 166, 0, 0.2);
+}
+
+
 
 
 .nav-link {

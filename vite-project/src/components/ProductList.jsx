@@ -1,5 +1,5 @@
 import { useEffect, useContext } from "react";
-import "../index.css"; // CSS dosyanız burada dahil ediliyor
+import "./ProductList.css";
 import ProductItem from "./ProductItem";
 import { GlobalContext } from "../context/GlobalContext";
 
@@ -32,8 +32,8 @@ export default function ProductList() {
         {products.length > 0 ? (
           products
             .filter((item) =>
-              searchValue.trim() === "" //başındaki boşlukları siler.
-                ? true
+              searchValue.trim() === "" //başındaki ve sonundaki boşlukları siler.
+                ? true //arama boşsa ürün listesinin tamamını döner
                 : item.title.toLowerCase().includes(searchValue.toLowerCase())
             )
             .map((item) => (

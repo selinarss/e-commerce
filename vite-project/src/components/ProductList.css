@@ -1,0 +1,18 @@
+.product-container {
+    overflow-x: auto;
+    padding: 20px;
+    margin: 0 100px;
+    /* Sol ve sağdan 100px boşluk */
+    max-width: calc(100% - 200px);
+    /* Toplam genişlikten margin'leri çıkar */
+}
+
+.product-container ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    min-width: min-content;
+    /* İçeriğin minimum genişliğini koru */
+}

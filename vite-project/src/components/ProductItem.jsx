@@ -1,6 +1,11 @@
 import React from "react";
+import Slider from "react-slick";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import "./ProductItem.css";
+import "swiper/css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Font Awesome ikonları ekleniyor
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

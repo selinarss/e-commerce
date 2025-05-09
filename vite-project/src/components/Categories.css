@@ -46,6 +46,21 @@
 
 }
 
+
+
+ul li:hover {
+    color: orange;
+    /* Hover efekti istersen */
+    transition: all 0.2s ease-in-out;
+  }
+
+  .categories-container ul li.active {
+    background-color: orange;
+    color: white;
+  }
+
+
+
 /* Dikey çizgi sadece ilk elemana eklenmez */
 .categories-container ul li:not(:last-child)::after {
     content: "";

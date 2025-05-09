@@ -1,10 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Categories.css";
-import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Categories = () => {
-  const { products, setProducts } = useContext(GlobalContext);
   const location = useLocation();
   const navigate = useNavigate(); //sayfa yönlendirme
 
@@ -26,7 +24,9 @@ const Categories = () => {
         <li onClick={() => handleCategoryClick("beauty")}>Güzellik</li>
         <li onClick={() => handleCategoryClick("fragrances")}>Parfümler</li>
         <li onClick={() => handleCategoryClick("furniture")}>Mobilya</li>
-        <li onClick={() => handleCategoryClick("groceries")}>Market Ürünleri</li>
+        <li onClick={() => handleCategoryClick("groceries")}>
+          Market Ürünleri
+        </li>
       </ul>
     </div>
   );
