@@ -1,5 +1,6 @@
 import React from "react";
 
 export const User = () => {
-  return <div>User</div>;
+  console.log("1");
+  return <div className="user-container">"merhaba"</div>;
 };

@@ -6,15 +6,13 @@ import { GlobalContext } from "./context/GlobalContext.jsx";
 import { GlobalProvider } from "./context/GlobalContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootLayout } from "./pages/RootLayout";
-import { User } from "./pages/User.jsx"; // User'ı doğru bir şekilde import ediyoruz
+import { User } from "./pages/User.jsx";
 import { Favorites } from "./pages/Favorites.jsx";
 import { ShoppingCart } from "./pages/ShoppingCart.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
-import CategoryPage  from "./pages/CategoryPage.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 
 function App() {
-  // const [totalObject, setTotalObject] = useState({});
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,7 +22,10 @@ function App() {
         { path: "/user", element: <User /> },
         { path: "/favorites", element: <Favorites /> },
         { path: "/card", element: <ShoppingCart /> },
-        { path: "/category/:catId", element: <CategoryPage /> },
+        {
+          path: "/product/category/:catName",
+          element: <CategoryPage />,
+        },
       ],
     },
   ]);

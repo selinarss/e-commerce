@@ -4,10 +4,10 @@ import { GlobalContext } from "../context/GlobalContext";
 import Total from "./Total";
 
 const Cart = ({ product, quantity }) => {
-  const { cartIncrement, cartDecrement, removeFromCart } = useContext(GlobalContext);
+  const { cartIncrement, cartDecrement, removeFromCart } =
+    useContext(GlobalContext);
   //const cart = inCard(product.id);
   console.log("Sepetteki total ürün miktari", quantity);
- 
 
   return (
     <>
@@ -46,7 +46,6 @@ const Cart = ({ product, quantity }) => {
             </div>
           </div>
         </div>
-        <div></div>
       </div>
     </>
   );

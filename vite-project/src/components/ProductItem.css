@@ -1,10 +1,7 @@
 .product-container {
-    overflow-x: auto;
+   
     padding: 20px;
     
-}
-.product-container::-webkit-scrollbar{
-    display: none;
 }
 
 ul {
@@ -177,3 +174,5 @@ ul {
     margin: 8px;
     font-weight: bold;
 }
+
+ 

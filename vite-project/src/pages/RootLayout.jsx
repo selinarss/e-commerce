@@ -7,10 +7,13 @@ export const RootLayout = () => {
   return (
     <>
       <Header />
-      <Categories />
-      <main>
-        <Outlet />
-      </main>
+      <div style={{ display: 'flex' }}>
+        <Categories />
+        <main style={{ flex: 1 }}>
+          <Outlet />
+        </main>
+      </div>
     </>
   );
 };
+//buradan kategoriler kaldırıldı çünkü yapının solda sabit olmasını istiyorum.
