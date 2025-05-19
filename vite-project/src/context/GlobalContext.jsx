@@ -16,6 +16,7 @@ export const GlobalProvider = ({ children }) => {
   const [searchInput, setSearchInput] = useState("");
   const [showResults, setShowResults] = useState(false);
   const [currentCategories, setCurrentCategories] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(null);
 
   //amount'u addToCart içinde tut, countsObjectehiç gerek yok!
   //Bu context sayesinde başka bileşenler, bu dosyada tanımlanan global verilere ulaşabilir.
@@ -45,44 +46,25 @@ export const GlobalProvider = ({ children }) => {
   //items state'i: Anasayfada görüntülenen tüm ürünlerin listesi.
   //Her ürünün count adlı bir sayacı vardır
   const increment = (id) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, count: (item.count || 0) + 1 } : item
-      )
-    );
+    setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, count: (item.count || 0) + 1 } : item)));
   }; //Henüz sepete eklenmemiş ürünler içindir. count
 
   const decrement = (id) => {
-    setItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id && item.count > 0
-          ? { ...item, count: item.count - 1 }
-          : item
-      )
-    );
+    setItems((prevItems) => prevItems.map((item) => (item.id === id && item.count > 0 ? { ...item, count: item.count - 1 } : item)));
   };
 
   // Sepetteki ürünün miktarını artırma fonksiyonu (sepet için ayrı)
   //Bu fonksiyon, sepetteki ürünlerin quantity (adet) değerini 1 azaltır.
   const cartIncrement = (id) => {
     setaddToCart(
-      (prevCart) =>
-        prevCart.map((item) =>
-          item.product.id === id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        ) //quantity = sepetteki ürünün kaç adet olduğunu temsil eder.
+      (prevCart) => prevCart.map((item) => (item.product.id === id ? { ...item, quantity: item.quantity + 1 } : item)) //quantity = sepetteki ürünün kaç adet olduğunu temsil eder.
     );
   };
 
   // Sepetteki ürünün miktarını azaltma fonksiyonu (sepet için ayrı)
   const cartDecrement = (id) => {
     setaddToCart((prevCart) =>
-      prevCart.map((item) =>
-        item.product.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
+      prevCart.map((item) => (item.product.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item))
     );
   };
 
@@ -94,15 +76,13 @@ export const GlobalProvider = ({ children }) => {
     }
 
     setaddToCart((prevCart) => {
-      const existingItem = prevCart.find(
-        (item) => item.product.id === product.id
-      );
+      const existingItem = prevCart.find((item) => item.product.id === product.id);
       if (existingItem) {
         return prevCart.map((item) =>
           item.product.id === product.id
             ? {
                 ...item,
-                quantity: item.quantity + currentCount,
+                quantity: item.quantity + currentCount
               }
             : item
         );
@@ -111,15 +91,11 @@ export const GlobalProvider = ({ children }) => {
       }
     });
 
-    console.log(
-      `Ürün sepete eklendi, ID: ${product.id}, Adet: ${currentCount}`
-    );
+    console.log(`Ürün sepete eklendi, ID: ${product.id}, Adet: ${currentCount}`);
   };
 
   const removeFromCart = (productID) => {
-    setaddToCart((prev) =>
-      prev.filter((item) => item.product.id !== productID)
-    );
+    setaddToCart((prev) => prev.filter((item) => item.product.id !== productID));
     console.log(`Ürün silindi, ID: ${productID}`);
   };
 
@@ -164,6 +140,8 @@ export const GlobalProvider = ({ children }) => {
         setShowResults,
         currentCategories,
         setCurrentCategories,
+        activeCategory,
+        setActiveCategory
       }}
     >
       {children}

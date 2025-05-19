@@ -6,7 +6,7 @@
   overflow-x: hidden;
 }
 
-.product-container ul {
+.product-container ul:first-of-type {
   display: grid;
   /* Grid sistemi etkinleştirilir */
   grid-template-columns: repeat(4, 1fr);
@@ -21,7 +21,7 @@
   box-sizing: border-box;
 }
 
-.product-container ul>* {
+.product-container ul > * {
   animation: fadeIn 0.3s ease-out forwards;
 }
 

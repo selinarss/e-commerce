@@ -24,10 +24,10 @@ function App() {
         { path: "/card", element: <ShoppingCart /> },
         {
           path: "/product/category/:catName",
-          element: <CategoryPage />,
-        },
-      ],
-    },
+          element: <CategoryPage /> //buraya da categoryPage'e ver.
+        }
+      ]
+    }
   ]);
 
   return (

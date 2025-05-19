@@ -3,10 +3,10 @@ import "./ProductList.css";
 import ProductItem from "./ProductItem";
 import { GlobalContext } from "../context/GlobalContext";
 import ReactPaginate from "react-paginate";
+import { Pagination } from "./Pagination";
 
 export default function ProductList() {
-  const { data, products, filterData, showResults, setItems, items } =
-    useContext(GlobalContext);
+  const { data, products, filterData, showResults, setItems, items } = useContext(GlobalContext);
   const [totalItems, setTotalItems] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -19,12 +19,8 @@ export default function ProductList() {
       .then((data) => {
         // Mevcut ürün miktarlarını koru
         const updatedProducts = data.products.map((newProduct) => {
-          const existingProduct = items.find(
-            (item) => item.id === newProduct.id
-          );
-          return existingProduct
-            ? { ...newProduct, count: existingProduct.count || 0 }
-            : { ...newProduct, count: 0 };
+          const existingProduct = items.find((item) => item.id === newProduct.id);
+          return existingProduct ? { ...newProduct, count: existingProduct.count || 0 } : { ...newProduct, count: 0 };
         });
         setItems(updatedProducts);
       });
@@ -38,21 +34,13 @@ export default function ProductList() {
       .then((totalData) => {
         setTotalItems(totalData.total);
         // Sayfa ürünlerini al
-        fetch(
-          `https://dummyjson.com/products?limit=${itemsPerPage}&skip=${
-            currentPage * itemsPerPage
-          }`
-        )
+        fetch(`https://dummyjson.com/products?limit=${itemsPerPage}&skip=${currentPage * itemsPerPage}`)
           .then((res) => res.json())
           .then((data) => {
             // Mevcut ürün miktarlarını koru
             const updatedProducts = data.products.map((newProduct) => {
-              const existingProduct = items.find(
-                (item) => item.id === newProduct.id
-              );
-              return existingProduct
-                ? { ...newProduct, count: existingProduct.count || 0 }
-                : { ...newProduct, count: 0 };
+              const existingProduct = items.find((item) => item.id === newProduct.id);
+              return existingProduct ? { ...newProduct, count: existingProduct.count || 0 } : { ...newProduct, count: 0 };
             });
             setItems(updatedProducts);
           });
@@ -64,8 +52,7 @@ export default function ProductList() {
   };
 
   // Arama butonuna tıklandıysa filtreleme sonuçlarını, tıklanmadıysa normal sayfa ürünlerini göster.
-  const displayProducts =
-    showResults && filterData.length > 0 ? filterData : items;
+  const displayProducts = showResults && filterData.length > 0 ? filterData : items;
 
   return (
     <div className="product-container">
